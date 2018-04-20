@@ -4,18 +4,21 @@ import PropTypes from 'prop-types';
 
 const TestChild = ({onClick,item}) => {
 
+const Array = item;
+const items = Array.map((item,i) =>{
+              return <li key={i} 
+              onClick = {()=>onClick(i)}>{item}</li>});
+    
 return(
 <div > 
-    <h1>{item}</h1>
-    <h1 onClick = {onClick} >child element- click here and see the console
-    </h1>
+    <h1>{items}</h1>
 </div>
 );
 
 }
 
 TestChild.propTypes = {
-    item : PropTypes.string.isRequired,
+    item : PropTypes.array.isRequired,
     onClick: PropTypes.func.isRequired
 }
 

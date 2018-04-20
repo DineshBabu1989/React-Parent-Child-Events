@@ -6,20 +6,20 @@ class TestParent extends Component {
 constructor(props){
     super(props);
     this.state = {
-        data: [ 'info from parent state in child'],
+        data: [ 'item1','item2','item3'],
         click: false
     }    
 }
 
-handleClick = (event) => {
-    console.log("you have clicked child");
+handleClick = (i) => {
+    console.log("you have clicked child-"+i);
     this.setState({click:true});
 }    
     
 render(){
  return(
      <div>
-     <TestChild item ={this.state.data[0]} onClick ={this.handleClick} />
+     <TestChild item ={this.state.data} onClick ={this.handleClick} />
      </div>
  );
 }
